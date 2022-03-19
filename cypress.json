@@ -1,0 +1,19 @@
+{
+  "baseUrl": "http://www.webdriveruniversity.com",
+  "pageLoadTimeout": 30000,
+  "env": {
+    "webdriverUni_homepage": "http://www.webdriveruniversity.com",
+    "first_name": "Supipi",
+    "last_name": "Vidanagamage"
+  },
+  "retries": {
+    "runMode": 1,
+    "openMode": 0
+  },
+  "projectId": "ej9acw",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  },
+    "experimentalStudio": true
+}
