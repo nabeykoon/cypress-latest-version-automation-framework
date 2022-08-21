@@ -42,6 +42,15 @@ module.exports = (on, config) => {
   on('file:preprocessor', cucumber())
 }
 
+const webpack = require("@cypress/webpack-preprocessor");
+
+module.exports = on => {
+  const options = {
+    webpackOptions: require("../webpack.config")
+  };
+  on("file:preprocessor", webpack(options));
+};
+
 //Configure google lighthouse and p11ly
 const { lighthouse, pa11y, prepareAudit } = require("cypress-audit");
 

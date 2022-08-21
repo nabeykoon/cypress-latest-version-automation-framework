@@ -60,7 +60,7 @@ describe("Alias and invoke", () => {
         
     }).then(() => {
         cy.log("Total price of all items: " + allItemsTotal);
-        expect(allItemsTotal).to.equal(616.7);
+        expect(allItemsTotal).to.equal(648.5);
 
     })
 

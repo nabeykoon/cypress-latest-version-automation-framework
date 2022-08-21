@@ -15,5 +15,5 @@
   "reporterOptions": {
     "configFile": "reporter-config.json"
   },
-    "experimentalStudio": true
+    "experimentalStudio": false
 }

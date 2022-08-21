@@ -8,12 +8,26 @@ describe("network requests", () => {
         cy.visit('https://example.cypress.io/commands/network-requests');
     })
 
+    
     it("Get request", () => {
         //cy.intercept('GET', '**/comments/*').as('getComment');
 
         cy.intercept({
             method: 'GET',
             url: '**/comments/*',
+        
+        }).as('getComment');
+        cy.get(".network-btn").click()
+        //cy.wait('@getComment').its('response.statusCode').should("eq", 200);
+        //its('response.statusCode').should("eq", 200);
+    })
+
+    it("Get request", () => {
+        //cy.intercept('GET', '**/comments/*').as('getComment');
+
+        cy.intercept({
+            method: 'GET',
+            url: '**/comments/*'
         }, {
             body: {
                 "postId": 1,
@@ -24,7 +38,10 @@ describe("network requests", () => {
             }
         }).as('getComment');
         cy.get(".network-btn").click()
-        cy.wait("@getComment").its('response.statusCode').should("eq", 200);
+        cy.wait('@getComment').then((interception) => {
+            cy.wrap(interception.response.statusCode).should("eq", 200);
+        })
+        //its('response.statusCode').should("eq", 200);
     })
 
     it("POST request", () => {
