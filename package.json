@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^9.0.0",
+    "@reportportal/agent-js-cypress": "^5.0.4",
     "acorn": "^8.7.0"
   }
 }

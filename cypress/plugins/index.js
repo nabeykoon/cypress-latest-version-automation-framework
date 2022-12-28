@@ -66,3 +66,9 @@ module.exports = (on, config) => {
 };
 
 require('@applitools/eyes-cypress')(module);
+
+//Report Portal configuration
+const registerReportPortalPlugin = require('@reportportal/agent-js-cypress/lib/plugin');
+module.exports = (on, config) => registerReportPortalPlugin(on, config);
+
+

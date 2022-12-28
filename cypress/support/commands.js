@@ -61,3 +61,6 @@ import 'cypress-file-upload';
 
 //To run lighthouse using audit
 import 'cypress-audit/commands';
+
+//Report portal config
+require('@reportportal/agent-js-cypress/lib/commands/reportPortalCommands');

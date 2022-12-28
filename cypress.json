@@ -10,10 +10,23 @@
     "runMode": 1,
     "openMode": 0
   },
-  "projectId": "ej9acw",
-  "reporter": "cypress-multi-reporters",
-  "reporterOptions": {
-    "configFile": "reporter-config.json"
-  },
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+      "reporterEnabled": ["@reportportal/agent-js-cypress", "mochawesome"],
+      "mochawesomeReporterOptions": {
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "reportportalAgentJsCypressReporterOptions": {
+      "endpoint": "http://localhost:8080/api/v1",
+      "token": "59fab1a7-43b0-4e9d-9ed1-82d2f1092deb",
+      "launch": "Regression suite",
+      "project": "Test project",
+      "description": "Nightly execution cycle for Regression suite"
+    },
     "experimentalStudio": false
+  }
 }
